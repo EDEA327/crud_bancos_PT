@@ -1,5 +1,8 @@
 <% if @banks.any? %>
   <!-- Lógica para cuando hay bancos -->
+  <% if notice %>
+  <div class="notice"><%= notice %></div>
+  <% end %>
   <h1>Listado de Bancos</h1>
   <ul>
     <% @banks.each do |bank| %>
