@@ -17,4 +17,21 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
   def invalid_long_name_attributes
     { name: "A" * 51}
   end
+
+  test "Deberia mostrar la lista de bancos" do
+    get banks_url
+    assert_response :success
+  end
+
+  test "Debe mostrar el banco" do
+    get bank_url(:one)
+    assert_response :success
+  end
+
+  test "Debe renderizar la url del nuevo banco" do
+    get new_bank_url
+    assert_response :success
+  end
+
+
 end
