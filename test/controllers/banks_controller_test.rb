@@ -12,19 +12,13 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
     assert_equal ["is too long (maximum is 50 characters)"], assigns(:bank).errors[:name]
   end
 
-  private
-
-  def invalid_long_name_attributes
-    { name: "A" * 51}
-  end
-
   test "Deberia mostrar la lista de bancos" do
     get banks_url
     assert_response :success
   end
 
   test "Debe mostrar el banco" do
-    get bank_url(:one)
+    get bank_url(banks(:one))
     assert_response :success
   end
 
@@ -36,5 +30,17 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
   test "Debe crear un banco" do
     post banks_url, params: { bank: { name: "New Bank" } }
     assert_redirected_to banks_url
+    assert_equal flash[:notice], 'El banco fue creado exitosamente.'
+  end
+
+  test "Debe actualizar el banco" do
+    patch bank_url(banks(:one)), params: { bank: { name: "Updated Bank" } }
+    assert_redirected_to banks_url
+  end
+
+  private
+
+  def invalid_long_name_attributes
+    { name: "A" * 51}
   end
 end
