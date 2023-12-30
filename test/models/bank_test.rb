@@ -11,10 +11,10 @@ class BankTest < ActiveSupport::TestCase
     assert_not bank.valid?, 'nombre length not validated'
   end
 
-  test "No deberia guardar un banco el mismo nombre de otro" do
+  test "No deberia guardar un banco con el mismo nombre de otro" do
     existing_bank = banks(:one)
     new_bank = Bank.new(name: existing_bank.name)
 
-    assert_not new_bank.save, "Saved a bank with a duplicate name"
+    assert_not new_bank.save, "Se guardo un banco con el mismo nombre del otro"
   end
 end

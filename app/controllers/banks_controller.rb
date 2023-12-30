@@ -35,6 +35,12 @@ class BanksController < ApplicationController
     end
   end
 
+  def destroy
+    @bank = Bank.find(params[:id])
+    @bank.destroy
+    redirect_to banks_url, notice: 'El banco se eliminóaexistosamente.'
+  end
+
   private
 
   def bank_params
