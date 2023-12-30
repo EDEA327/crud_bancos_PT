@@ -1,0 +1,13 @@
+<% if @banks.any? %>
+  <!-- Lógica para cuando hay bancos -->
+  <h1>Listado de Bancos</h1>
+  <ul>
+    <% @banks.each do |bank| %>
+      <li><%= bank.name %></li>
+    <% end %>
+  </ul>
+<% else %>
+  <!-- Lógica para cuando no hay bancos -->
+  <p>No hay bancos en la base de datos.</p>
+<% end %>
+
