@@ -33,5 +33,8 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-
+  test "Debe crear un banco" do
+    post banks_url, params: { bank: { name: "New Bank" } }
+    assert_redirected_to banks_url
+  end
 end
