@@ -21,9 +21,23 @@ class BanksController < ApplicationController
     end
   end
 
+  def edit
+    @bank = Bank.find(params[:id])
+  end
+
+  def update
+    @bank = Bank.find(params[:id])
+
+    if @bank.update(bank_params)
+      redirect_to banks_path, notice: 'El banco se actualizo existosamente.'
+    else
+      render :edit
+    end
+  end
+
   private
 
   def bank_params
-    params.require(:bank).permit(:name, :other_attributes)
+    params.require(:bank).permit(:name)
   end
 end
