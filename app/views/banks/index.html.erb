@@ -3,11 +3,13 @@
   <h1>Listado de Bancos</h1>
   <ul>
     <% @banks.each do |bank| %>
-      <li><%= bank.name %></li>
+      <li><%= link_to bank.name, bank %></li>
     <% end %>
   </ul>
 <% else %>
   <!-- Lógica para cuando no hay bancos -->
   <p>No hay bancos en la base de datos.</p>
 <% end %>
+
+<%= link_to 'Nuevo Banco', new_bank_path %>
 
