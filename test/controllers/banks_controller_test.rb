@@ -44,7 +44,7 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to banks_path
-    assert_equal flash[:notice], 'El banco se eliminó correctamente'
+    assert_equal flash[:notice], "El banco #{banks(:one).name} se eliminó exitosamente."
   end
 
   private
