@@ -1,4 +1,10 @@
 es:
+  activerecord:
+    models:
+      bank: 'Banco'
+    attributes:
+      bank:
+        name: 'Nombre'
   helpers:
     submit: 'Enviar'
   error:
