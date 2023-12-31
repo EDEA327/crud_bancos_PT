@@ -38,6 +38,15 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
     assert_redirected_to banks_url
   end
 
+  test "Debe eliminar el banco" do
+    assert_difference('Bank.count', -1) do
+      delete bank_path(banks(:one))
+    end
+
+    assert_redirected_to banks_path
+    assert_equal flash[:notice], 'El banco se eliminó correctamente'
+  end
+
   private
 
   def invalid_long_name_attributes
