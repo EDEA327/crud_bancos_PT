@@ -14,3 +14,9 @@ es:
     index:
       add_bank: 'Nuevo banco'
       title: 'Listado de bancos'
+      create: 
+        created: 'El banco fue creado exitosamente.'
+      update: 
+        updated: 'El banco se actualizó exitosamente.'
+      destroy:
+        destroyed: 'El banco se eliminó exitosamente.'
