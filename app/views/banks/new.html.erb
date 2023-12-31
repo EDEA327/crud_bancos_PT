@@ -1,5 +1,5 @@
-<h1>Nuevo Banco</h1>
+<h1><%=t('.title')%></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Volver al Listado', banks_path %>
+<%= link_to t('common.index_btn'), banks_path %>

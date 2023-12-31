@@ -4,7 +4,10 @@
 
 <p>
   <%= link_to 'Editar', edit_bank_path(@bank) %>
-  <%= link_to 'Eliminar', bank_path(@bank), data: {turbo_method: :delete} %>
+  <%= link_to 'Eliminar', bank_path(@bank), data: {
+    turbo_method: :delete,
+    turbo_confirm: t('common.confirm')
+  } %>
 </p>
 
-<%= link_to 'Volver al Listado', banks_path %>
+<%= link_to t('common.index_btn'), banks_path %>

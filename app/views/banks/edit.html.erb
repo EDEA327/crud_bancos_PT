@@ -1,5 +1,5 @@
-<h1>Editar Banco: <%= @bank.name %></h1>
+<h1> <%= @bank.name %></h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Volver al Listado', banks_path %>
+<%= link_to t('common.index_btn'), banks_path %>

@@ -3,7 +3,7 @@
   <% if notice %>
   <div class="notice"><%= notice %></div>
   <% end %>
-  <h1>Listado de Bancos</h1>
+  <h1><%=t('.title')%></h1>
   <ul>
     <% @banks.each do |bank| %>
       <li><%= link_to bank.name, bank %></li>
@@ -14,5 +14,5 @@
   <p>No hay bancos en la base de datos.</p>
 <% end %>
 
-<%= link_to 'Nuevo Banco', new_bank_path %>
+<%= link_to t('.add_bank'), new_bank_path %>
 
