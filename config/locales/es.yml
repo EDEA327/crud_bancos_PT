@@ -1,4 +1,8 @@
 es:
+  helpers:
+    submit: 'Enviar'
+  error:
+    form: 'prohibieron que este banco sea guardado:'
   common:
     index_btn: 'Volver al listado'
     confirm: '¿Está seguro?'

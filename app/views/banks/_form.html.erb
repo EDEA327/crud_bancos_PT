@@ -1,7 +1,7 @@
 <%= form_with(model: @bank, local: true) do |form| %>
   <% if @bank.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@bank.errors.count, "error") %> prohibieron que este banco sea guardado:</h2>
+      <h2><%= pluralize(@bank.errors.count, "error") %><%= t('error.form')%> </h2>
       <ul>
         <% @bank.errors.full_messages.each do |message| %>
           <li><%= message %></li>
@@ -16,6 +16,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit  t('helpers.submit') %>
   </div>
 <% end %>
