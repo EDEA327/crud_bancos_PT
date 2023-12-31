@@ -4,7 +4,7 @@
 
 <p>
   <%= link_to 'Editar', edit_bank_path(@bank) %>
-  <%= link_to 'Eliminar', bank_path(@bank), turbo_method: :delete, data: { confirm: '¿Estás seguro?' } %>
+  <%= link_to 'Eliminar', bank_path(@bank), data: {turbo_method: :delete} %>
 </p>
 
 <%= link_to 'Volver al Listado', banks_path %>
