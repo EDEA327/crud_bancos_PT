@@ -1,0 +1,12 @@
+es:
+  common:
+    index_btn: 'Volver al listado'
+    confirm: '¿Está seguro?'
+  banks:
+    edit:
+      title: 'Editar banco:'
+    new:
+      title: 'Nuevo banco'
+    index:
+      add_bank: 'Nuevo banco'
+      title: 'Listado de bancos'
