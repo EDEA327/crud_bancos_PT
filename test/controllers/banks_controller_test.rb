@@ -30,7 +30,7 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
   test "Debe crear un banco" do
     post banks_url, params: { bank: { name: "New Bank" } }
     assert_redirected_to banks_url
-    assert_equal flash[:notice], 'El banco fue creado exitosamente.'
+    assert_equal flash[:notice], "El banco #{banks(:one).name} fue creado exitosamente."
   end
 
   test "Debe actualizar el banco" do

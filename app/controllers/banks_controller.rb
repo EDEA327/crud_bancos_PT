@@ -15,7 +15,7 @@ class BanksController < ApplicationController
     @bank = Bank.new(bank_params)
 
     if @bank.save
-      redirect_to @bank, notice: 'El banco fue creado exitosamente.'
+      redirect_to banks_url, notice: "El banco #{@bank.name} fue creado exitosamente."
     else
       render :new
     end
@@ -38,7 +38,7 @@ class BanksController < ApplicationController
   def destroy
     @bank = Bank.find(params[:id])
     @bank.destroy
-    redirect_to banks_url, notice: 'El banco se eliminóaexistosamente.'
+    redirect_to banks_url, notice: "El banco #{@bank.name} se eliminó exitosamente.", status: :see_other
   end
 
   private
