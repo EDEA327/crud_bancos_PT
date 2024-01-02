@@ -26,3 +26,6 @@ es:
         updated: 'El banco se actualizó exitosamente.'
       destroy:
         destroyed: 'El banco se eliminó exitosamente.'
+  providers:
+    errors:
+      nit: 'formato inválido'
