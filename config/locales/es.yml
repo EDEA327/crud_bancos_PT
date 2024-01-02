@@ -1,14 +1,21 @@
 es:
   activerecord:
     models:
-      bank: 'Banco'
+      bank:
+        attributes:
+            name:
+              too_long: "es demasiado largo (máximo es 50 caracteres)"
     attributes:
       bank:
         name: 'Nombre'
   helpers:
     submit: 'Enviar'
-  error:
+  errors:
     form: 'prohibieron que este banco sea guardado:'
+    messages:
+      count:
+        one: "debe ser %{count} o menos"
+        other: "debe ser %{count} o menos"
   common:
     index_btn: 'Volver al listado'
     confirm: '¿Está seguro?'
@@ -29,10 +36,10 @@ es:
   providers:
     errors:
       nit: 'formato inválido'
-    create: 
-        created: 'El proveedor fue creado exitosamente.'
-      update: 
-        updated: 'El proveedor se actualizó exitosamente.'
-      destroy:
-        destroyed: 'El proveedor se eliminó exitosamente.'
-    nit_format: '901362343-4'
+    create:
+      created: 'El proveedor fue creado exitosamente.'
+    update:
+      updated: 'El proveedor se actualizó exitosamente.'
+    destroy:
+      destroyed: 'El proveedor se eliminó exitosamente.'
+  nit_format: '901362343-4'
