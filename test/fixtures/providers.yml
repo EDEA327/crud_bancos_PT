@@ -1,13 +1,13 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  nit: MyString
-  contact_name: MyString
-  contact_phone: MyString
+  name: Lionel Messi
+  nit: 901362343-4
+  contact_name: Antonella Rocuzzo
+  contact_phone: 1234567890
 
 two:
-  name: MyString
-  nit: MyString
-  contact_name: MyString
-  contact_phone: MyString
+  name: Cristiano Ronaldo
+  nit: 901362343-5
+  contact_name: Karim Benzema
+  contact_phone: 1234567890
