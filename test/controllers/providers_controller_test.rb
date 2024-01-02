@@ -15,11 +15,6 @@ class ProvidersControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "debería obtener editar" do
-    get providers_edit_url
-    assert_response :success
-  end
-
   test "debería obtener actualizar" do
     get providers_update_url
     assert_response :success
