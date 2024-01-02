@@ -29,3 +29,10 @@ es:
   providers:
     errors:
       nit: 'formato inválido'
+    create: 
+        created: 'El proveedor fue creado exitosamente.'
+      update: 
+        updated: 'El proveedor se actualizó exitosamente.'
+      destroy:
+        destroyed: 'El proveedor se eliminó exitosamente.'
+    nit_format: '901362343-4'
