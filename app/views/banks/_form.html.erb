@@ -2,11 +2,13 @@
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
-    <% @bank.errors.full_messages_for(:name),each do |message| %>
-      <div><%= message%></div>
+    <% @bank.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
   </div>
 
   <div class="actions">
-    <%= form.submit  t('common.submit') %>
+    <%= form.submit t('common.submit') %>
   </div>
 <% end %>
+
