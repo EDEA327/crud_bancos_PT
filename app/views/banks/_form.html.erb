@@ -1,18 +1,9 @@
 <%= form_with(model: @bank, local: true) do |form| %>
-  <% if @bank.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bank.errors.count, "error") %><%= t('errors.form')%> </h2>
-      <ul>
-        <% @bank.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name %>
+    <% @bank.errors.full_messages_for(:name),each do |message| %>
+      <div><%= message%></div>
   </div>
 
   <div class="actions">
