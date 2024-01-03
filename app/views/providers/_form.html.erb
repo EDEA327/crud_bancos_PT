@@ -6,7 +6,9 @@
   <label for="nit"><%= t('providers.form.nit') %>:</label>
   <%= form.text_field :nit, required: true %>
   <%= @provider.errors.full_messages_for(:nit).each do |message| %>
+    <% if message %>
       <div><%= message %></div>
+    <% end %>
   <% end %>
 
   <label for="contact_name"><%= t('providers.form.contact_name') %>:</label>
@@ -14,28 +16,19 @@
 
   <label for="contact_phone"><%= t('providers.form.contact_phone') %>:</label>
   <%= form.text_field :contact_phone, maxlength: 10 %>
-  <!-- Se establece una longitud máxima de 10 caracteres -->
 
-  <%
-=begin%>
- <!-- Campos de la cuenta bancaria -->
-  <label for="bank_name"><%= t('providers.form.bank_name') %>:</label>
+  <!-- Campos de la cuenta bancaria -->
   <%= form.fields_for :bank_account do |bank_fields| %>
+    <label for="bank_name"><%= t('providers.form.bank_name') %>:</label>
     <%= bank_fields.text_field :bank_name, required: true %>
-  <% end %> 
-<%
-=end%>
-
-  <label for="account_number"><%= t('providers.form.account_number') %>:</label>
-  <%= form.fields_for :bank_account do |bank_fields| %>
+    
+    <label for="account_number"><%= t('providers.form.account_number') %>:</label>
     <%= bank_fields.text_field :account_number, maxlength: 15 %>
-    <!-- Se establece una longitud máxima de 15 caracteres -->
-  <% end %>
 
-  <!-- Combobox para seleccionar el banco -->
-  <label for="existing_banks"><%= t('providers.form.existing_banks') %>:</label>
-  <%= form.collection_select :bank_id, Bank.all, :id, :name%>
-  
+    <!-- Combobox para seleccionar el banco -->
+    <label for="existing_banks"><%= t('providers.form.existing_banks') %>:</label>
+    <%= bank_fields.collection_select :bank_id, Bank.all, :id, :name %>
+  <% end %>
 
   <%= form.submit t('helpers.submit') %>
 <% end %>
