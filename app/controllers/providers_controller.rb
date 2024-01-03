@@ -1,19 +1,20 @@
 class ProvidersController < ApplicationController
-  before_action :set_provider, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   def index
-    @providers = Provider.paginate(page: params[:page], per_page: 10)
+    @providers = current_user.providers.paginate(page: params[:page], per_page: 10)
   end
 
   def show
+    @provider = current_user.providers.find(params[:id])
   end
 
   def new
-    @provider = Provider.new
+    @provider = current_user.providers.build
   end
 
   def create
-    @provider = Provider.new(provider_params)
+    @provider = current_user.providers.build(provider_params)
 
     if @provider.save
       redirect_to providers_url, notice: I18n.t('providers.create.success')
@@ -24,9 +25,12 @@ class ProvidersController < ApplicationController
   end
 
   def edit
+    @provider = current_user.providers.find(params[:id])
   end
 
   def update
+    @provider = current_user.providers.find(params[:id])
+
     if @provider.update(provider_params)
       redirect_to @provider, notice: I18n.t('providers.update.success')
     else
@@ -35,18 +39,15 @@ class ProvidersController < ApplicationController
   end
 
   def destroy
+    @provider = current_user.providers.find(params[:id])
     @provider.destroy
+
     redirect_to providers_url, notice: I18n.t('providers.destroy.success')
   end
 
   private
 
-  def set_provider
-    @provider = Provider.find(params[:id])
-  end
-
   def provider_params
     params.require(:provider).permit(:name, :nit, :contact_name, :contact_phone, :bank_id, :account_number)
   end
-
 end
