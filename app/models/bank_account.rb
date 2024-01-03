@@ -3,4 +3,5 @@ class BankAccount < ApplicationRecord
   validates :account_number, length: { maximum: 15 }, allow_blank: true
 
   belongs_to :provider
+  belongs_to :bank
 end
