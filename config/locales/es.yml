@@ -6,9 +6,24 @@ es:
           attributes:
               name:
                 too_long: "es demasiado largo (máximo es 50 caracteres)"
+        provider:
+          attributes:
+            name:
+              too_long: "es demasiado largo (máximo %{count} caracteres)"
+            nit:
+              invalid: "no es válido"
+            contact_name:
+              too_long: "es demasiado largo (máximo %{count} caracteres)"
+            contact_phone:
+              too_long: "es demasiado largo (máximo %{count} caracteres)"
     attributes:
       bank:
-        name: 'Nombre'   
+        name: 'Nombre'
+      provider:
+        name: "Nombre"
+        nit: "NIT"
+        contact_name: "Nombre de Contacto"
+        contact_phone: "Teléfono de Contacto"
   errors:
     form: 'prohibieron que este banco sea guardado:'
     messages:

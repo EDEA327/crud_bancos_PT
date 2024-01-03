@@ -1,0 +1,13 @@
+one:
+  name: Proveedor Uno
+  nit: '123456789-0'
+  contact_name: Persona Uno
+  contact_phone: '1234567890'
+  bank: one
+
+two:
+  name: Proveedor Dos
+  nit: '987654321-1'
+  contact_name: Persona Dos
+  contact_phone: '9876543210'
+  bank: two

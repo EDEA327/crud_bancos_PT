@@ -10,23 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_03_145353) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_03_183534) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "bank_accounts", force: :cascade do |t|
-    t.string "bank_name"
-    t.string "account_number"
-    t.bigint "provider_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["provider_id"], name: "index_bank_accounts_on_provider_id"
-  end
 
   create_table "banks", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "account_number"
   end
 
   create_table "providers", force: :cascade do |t|
@@ -34,12 +26,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_03_145353) do
     t.string "nit"
     t.string "contact_name"
     t.string "contact_phone"
+    t.bigint "bank_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "bank_id", null: false
     t.index ["bank_id"], name: "index_providers_on_bank_id"
   end
 
-  add_foreign_key "bank_accounts", "providers"
   add_foreign_key "providers", "banks"
 end

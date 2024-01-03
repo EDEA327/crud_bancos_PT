@@ -29,7 +29,7 @@ class BanksController < ApplicationController
     @bank = Bank.find(params[:id])
 
     if @bank.update(bank_params)
-      redirect_to banks_path, notice: t('.updated')
+      redirect_to banks_path, notice: t('banks.updated')
     else
       render :edit
     end
@@ -38,7 +38,7 @@ class BanksController < ApplicationController
   def destroy
     @bank = Bank.find(params[:id])
     @bank.destroy
-    redirect_to banks_url, notice: t('.destroyed') , status: :see_other
+    redirect_to banks_url, notice: I18n.t('banks.destroyed') , status: :see_other
   end
 
   private
