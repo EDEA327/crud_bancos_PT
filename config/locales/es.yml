@@ -4,8 +4,8 @@ es:
       models:
         bank:
           attributes:
-              name:
-                too_long: "es demasiado largo (máximo es 50 caracteres)"
+            name:
+              too_long: "es demasiado largo (máximo es 50 caracteres)"
         provider:
           attributes:
             name:
@@ -39,6 +39,13 @@ es:
     submit: 'Enviar'
     edit: 'Editar'
     destroy: 'Eliminar'
+  providers:
+    create:
+      success: 'Proveedor creado exitosamente.'
+    update:
+      success: 'Proveedor actualizado exitosamente.'
+    destroy:
+      success: 'Proveedor eliminado exitosamente.'
   banks:
     edit:
       title: 'Editar banco:'
@@ -47,9 +54,6 @@ es:
     index:
       add_bank: 'Nuevo banco'
       title: 'Listado de bancos'
-    # Acciones     
     created: 'El banco fue creado exitosamente.'
     destroyed: 'El banco se eliminó exitosamente.'
     updated: 'El banco se actualizó exitosamente.'
-    destroyed: 'El banco se eliminó exitosamente.'
-  
