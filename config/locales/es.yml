@@ -17,14 +17,14 @@ es:
               too_long: "es demasiado largo (máximo %{count} caracteres)"
             contact_phone:
               too_long: "es demasiado largo (máximo %{count} caracteres)"
-      attributes:
-        bank:
-          name: 'Nombre'
-        provider:
-          name: "Nombre"
-          nit: "NIT"
-          contact_name: "Nombre de Contacto"
-          contact_phone: "Teléfono de Contacto"
+    attributes:
+      bank:
+        name: 'Nombre'
+      provider:
+        name: "Nombre"
+        nit: "NIT"
+        contact_name: "Nombre de Contacto"
+        contact_phone: "Teléfono de Contacto"
   errors:
     form: 'prohibieron que este banco sea guardado:'
     messages:
@@ -52,6 +52,8 @@ es:
       title: 'Listado de Proveedores'
       no_providers: 'No hay proveedores en la base de datos.'
       add_provider: 'Nuevo Proveedor'
+    new:
+      title: 'Nuevo proveedor'
     name: 'Nombre'
     contact_name: 'Nombre de Contacto'
     contact_phone: 'Teléfono de Contacto'

@@ -6,7 +6,7 @@ class ProvidersController < ApplicationController
   end
 
   def show
-    byebug
+
   end
 
   def new
@@ -15,14 +15,14 @@ class ProvidersController < ApplicationController
 
   def create
     @provider = Provider.new(provider_params)
-
+    @provider.bank_account_number = @provider.get_bank_account_number
     # Asociar el proveedor con el banco seleccionado
     @provider.bank = Bank.find(params[:provider][:bank_id])
 
     if @provider.save
       redirect_to providers_url, notice: I18n.t('providers.create.success')
     else
-      puts "Errors: #{@provider.errors.full_messages}"
+      puts "Errors: #{provider.errors.full_messages}"
       render :new
     end
   end
@@ -31,6 +31,8 @@ class ProvidersController < ApplicationController
   end
 
   def update
+    @provider.bank_account_number = @provider.get_bank_account_number
+
     if @provider.update(provider_params)
       redirect_to @provider, notice: I18n.t('providers.update.success')
     else
@@ -50,6 +52,6 @@ class ProvidersController < ApplicationController
   end
 
   def provider_params
-    params.require(:provider).permit(:name, :nit, :contact_name, :contact_phone, :bank_id)
+    params.require(:provider).permit(:name, :nit, :contact_name, :contact_phone, :bank_id, :bank_account_number)
   end
 end

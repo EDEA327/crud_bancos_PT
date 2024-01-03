@@ -7,7 +7,9 @@
 
 <p>
   <%= link_to t('common.edit'), edit_provider_path(@provider) %>
-  <%= link_to t('common.destroy'), @provider, turbo_method: :delete, data: { turbo_confirm: t('common.confirm') } %>
+  <%= link_to t('common.destroy'), @provider, data: { 
+    turbo_method: :delete,
+    turbo_confirm: t('common.confirm') } %>
   
   <%= link_to t('common.index_btn'), providers_path %>
 </p>
