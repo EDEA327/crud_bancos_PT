@@ -2,7 +2,7 @@ class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
 
   def index
-
+    @providers = Provider.all
   end
 
   def show
