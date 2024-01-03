@@ -1,4 +1,10 @@
 es:
+  home:
+    welcome: "Bienvenido a la Página de Inicio"
+    greeting: "¡Hola, %{email}!"
+    sign_out: "Cerrar sesión"
+    sign_in: "Iniciar sesión"
+    sign_up: "Registrarse"
   dashboard:
       no_records_message: 'No hay registros disponibles.'
   activerecord:
