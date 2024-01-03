@@ -1,0 +1,7 @@
+# app/views/providers/edit.html.erb
+
+<h1><%= t('providers.edit.title') %></h1>
+
+<%= render 'form', provider: @provider %>
+
+<%= link_to t('common.index_btn'), providers_path %>

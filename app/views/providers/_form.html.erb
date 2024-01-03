@@ -1,0 +1,49 @@
+# app/views/providers/_form.html.erb
+
+<%= form_with(model: provider, local: true) do |form| %>
+  <% if provider.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(provider.errors.count, I18n.t('errors.count.one')) %> <%= I18n.t('errors.form') %>:</h2>
+
+      <ul>
+        <% provider.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nit %>
+    <%= form.text_field :nit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact_name %>
+    <%= form.text_field :contact_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :contact_phone %>
+    <%= form.text_field :contact_phone %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bank_id %>
+    <%= form.collection_select(:bank_id, Bank.all, :id, :name, { prompt: I18n.t('common.select_bank') }) %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bank_account_number %>
+    <%= form.text_field :bank_account_number %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit I18n.t('common.submit') %>
+  </div>
+<% end %>
