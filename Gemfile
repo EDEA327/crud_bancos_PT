@@ -50,6 +50,9 @@ gem 'will_paginate'
 # Gemfile
 gem 'hotwire-rails'
 
+# Sistema de login
+gem 'devise'
+
 
 
 
