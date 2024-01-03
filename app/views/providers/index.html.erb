@@ -1,0 +1,20 @@
+<% if @providers.any? %>
+  <!-- Lógica para cuando hay proveedores -->
+  <% if notice %>
+    <div class="notice"><%= notice %></div>
+  <% end %>
+
+  <% @providers.each do |provider| %>
+  <ul>
+    <li><%= link_to provider.name, provider_path(provider) %></li>
+  </ul>
+  <% end %>
+
+  <%= will_paginate @providers %>
+
+<% else %>
+  <!-- Lógica para cuando no hay proveedores -->
+  <p><%= t('providers.index.no_providers') %></p>
+<% end %>
+
+<%= link_to t('providers.index.add_provider'), new_provider_path %>
