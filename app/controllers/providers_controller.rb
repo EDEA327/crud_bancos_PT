@@ -2,10 +2,11 @@ class ProvidersController < ApplicationController
   before_action :set_provider, only: [:show, :edit, :update, :destroy]
 
   def index
-    @providers = Provider.all
+    @providers = Provider.paginate(page: params[:page], per_page: 10)
   end
 
   def show
+    byebug
   end
 
   def new
@@ -15,9 +16,13 @@ class ProvidersController < ApplicationController
   def create
     @provider = Provider.new(provider_params)
 
+    # Asociar el proveedor con el banco seleccionado
+    @provider.bank = Bank.find(params[:provider][:bank_id])
+
     if @provider.save
-      redirect_to @provider, notice: I18n.t('providers.create.success')
+      redirect_to providers_url, notice: I18n.t('providers.create.success')
     else
+      puts "Errors: #{@provider.errors.full_messages}"
       render :new
     end
   end
