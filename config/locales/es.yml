@@ -22,7 +22,6 @@ es:
     confirm: '¿Está seguro?'
     no_information: 'Sin información en la tabla'
     actions: 'Acciones'
-    confirm: '¿Estás seguro?'
     no_providers: 'Sin proveedores registrados'
   banks:
     edit:
@@ -56,7 +55,7 @@ es:
       contact_phone: 'Numero del contacto'
       bank_name: 'Banco'
       account_number: 'Numero de cuenta'
-      existing_banks: 'Lista de bancos'
+      existing_banks: 'Banco'
     nit_format: '901362343-4'
     index:
       title: 'Listado de Proveedores'
