@@ -1,9 +1,9 @@
+<h1><%= t('.title')%></h1>
 <% if @providers.any? %>
   <!-- Lógica para cuando hay proveedores -->
   <% if notice %>
     <div class="notice"><%= notice %></div>
-  <% end %>
-
+  <% end %> 
   <% @providers.each do |provider| %>
   <ul>
     <li><%= link_to provider.name, provider_path(provider) %></li>
