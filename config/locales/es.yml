@@ -12,18 +12,19 @@ es:
               too_long: "es demasiado largo (máximo %{count} caracteres)"
             nit:
               invalid: "no es válido"
+              taken: "ya está en uso"
             contact_name:
               too_long: "es demasiado largo (máximo %{count} caracteres)"
             contact_phone:
               too_long: "es demasiado largo (máximo %{count} caracteres)"
-    attributes:
-      bank:
-        name: 'Nombre'
-      provider:
-        name: "Nombre"
-        nit: "NIT"
-        contact_name: "Nombre de Contacto"
-        contact_phone: "Teléfono de Contacto"
+      attributes:
+        bank:
+          name: 'Nombre'
+        provider:
+          name: "Nombre"
+          nit: "NIT"
+          contact_name: "Nombre de Contacto"
+          contact_phone: "Teléfono de Contacto"
   errors:
     form: 'prohibieron que este banco sea guardado:'
     messages:
@@ -47,6 +48,15 @@ es:
       success: 'Proveedor actualizado exitosamente.'
     destroy:
       success: 'Proveedor eliminado exitosamente.'
+    index:
+      title: 'Listado de Proveedores'
+      no_providers: 'No hay proveedores en la base de datos.'
+      add_provider: 'Nuevo Proveedor'
+    name: 'Nombre'
+    contact_name: 'Nombre de Contacto'
+    contact_phone: 'Teléfono de Contacto'
+    bank_name: 'Nombre del Banco'
+    bank_account_number: 'Número de Cuenta Bancaria'
   banks:
     edit:
       title: 'Editar banco:'
