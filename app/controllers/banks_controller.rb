@@ -15,7 +15,7 @@ class BanksController < ApplicationController
     @bank = Bank.new(bank_params)
 
     if @bank.save
-      redirect_to banks_url, notice: t('.created')
+      redirect_to banks_url, notice: t('banks.created')
     else
       render :new
     end
