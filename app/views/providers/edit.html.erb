@@ -1,2 +1,5 @@
-<h1>Providers#edit</h1>
-<p>Find me in app/views/providers/edit.html.erb</p>
+<h1> <%= @provider.name %></h1>
+
+<%= render 'form' %>
+
+<%= link_to t('common.index_btn'), providers_path %>
