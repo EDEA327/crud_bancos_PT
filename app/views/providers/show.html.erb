@@ -1,9 +1,9 @@
 <h1><%= @provider.name %></h1>
 
 <p><strong>Contacto:</strong> <%= @provider.contact_name %></p>
-<p><strong>Teléfono de contacto:</strong> <%= @provider.contact_phone.presence || t('common.no_information') %></p>
-<p><strong>Banco:</strong> <%= @provider.bank.name %></p>
-<p><strong>Número de cuenta bancaria:</strong> <%= @provider.bank_account_number.presence || t('common.no_information') %></p>
+<p><strong>Teléfono de contacto:</strong> <%= @provider.contact_phone.blank? || t('common.no_information') %></p>
+<p><strong>Banco:</strong> <%= @provider.bank ? @provider.bank.name : 'Sin información' %></p>
+<p><strong>Número de cuenta bancaria:</strong> <%= @provider.account_number.blank? || t('common.no_information') %></p>
 
 <p>
   <%= link_to t('common.edit'), edit_provider_path(@provider) %>
