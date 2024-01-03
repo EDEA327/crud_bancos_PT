@@ -1,0 +1,9 @@
+<h1><%= t('home.welcome') %></h1>
+
+<% if user_signed_in? %>
+  <p><%= t('home.greeting', email: current_user.email) %></p>
+  <%= link_to t('home.sign_out'), destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= link_to t('home.sign_in'), new_user_session_path %>
+  <%= link_to t('home.sign_up'), new_user_registration_path %>
+<% end %>
