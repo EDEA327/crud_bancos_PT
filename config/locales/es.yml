@@ -66,3 +66,6 @@ es:
       bank_name: 'Nombre del Banco'
       account_number: 'Número de Cuenta Bancaria'
       new_provider: 'Nuevo proveedor'
+    new:
+      edit:
+        title: 'Nuevo proveedor'
