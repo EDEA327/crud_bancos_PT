@@ -51,6 +51,12 @@ es:
       destroyed: 'El proveedor se eliminó exitosamente.'
     form:
       nit: 'NIT'
+      name: 'Nombre'
+      contact_name: 'Nombre de contacto'
+      contact_phone: 'Numero del contacto'
+      bank_name: 'Banco'
+      account_number: 'Numero de cuenta'
+      existing_banks: 'Lista de bancos'
     nit_format: '901362343-4'
     index:
       title: 'Listado de Proveedores'
