@@ -39,6 +39,7 @@ es:
     submit: 'Enviar'
     edit: 'Editar'
     destroy: 'Eliminar'
+    select_bank: 'Banco'
   providers:
     create:
       success: 'Proveedor creado exitosamente.'
