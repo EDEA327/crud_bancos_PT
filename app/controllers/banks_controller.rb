@@ -29,6 +29,9 @@ class BanksController < ApplicationController
     @bank = Bank.find(params[:id])
 
     if @bank.update(bank_params)
+      # Actualiza la marca de tiempo de los proveedores asociados cuando se actualiza el banco
+      @bank.providers.update_all(updated_at: Time.current)
+
       redirect_to banks_path, notice: t('banks.updated')
     else
       render :edit
@@ -37,8 +40,13 @@ class BanksController < ApplicationController
 
   def destroy
     @bank = Bank.find(params[:id])
+
+    # Actualiza la marca de tiempo de los proveedores asociados antes de eliminar el banco
+    @bank.providers.update_all(updated_at: Time.current)
+
     @bank.destroy
-    redirect_to banks_url, notice: I18n.t('banks.destroyed') , status: :see_other
+
+    redirect_to banks_url, notice: t('banks.destroyed'), status: :see_other
   end
 
   private
