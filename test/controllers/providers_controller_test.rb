@@ -42,8 +42,10 @@ class ProvidersControllerTest < ActionDispatch::IntegrationTest
   test 'debería actualizar proveedor' do
     patch provider_url(@provider), params: { provider: { name: 'Proveedor Actualizado' } }
     assert_redirected_to provider_url(@provider)
+    follow_redirect!
     assert_equal I18n.t('providers.update.success'), flash[:notice]
   end
+
 
   test 'debería destruir proveedor' do
     assert_difference('Provider.count', -1) do

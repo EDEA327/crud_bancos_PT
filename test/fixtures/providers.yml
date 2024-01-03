@@ -4,6 +4,7 @@ one:
   contact_name: Persona Uno
   contact_phone: '1234567890'
   account_number: '47894561312'
+  bank: one
 
 two:
   name: Proveedor Dos
@@ -11,3 +12,4 @@ two:
   contact_name: Persona Dos
   contact_phone: '9876543210'
   account_number: '78994561230'
+  bank: two
