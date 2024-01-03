@@ -47,6 +47,10 @@ gem 'rails-controller-testing'
 # Me permite paginar
 gem 'will_paginate'
 
+# Gemfile
+gem 'hotwire-rails'
+
+
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

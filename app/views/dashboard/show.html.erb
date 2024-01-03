@@ -1,0 +1,10 @@
+<h1>Dashboard</h1>
+
+<turbo-frame id="dashboard">
+  <% if @providers_count.positive? || @banks_count.positive? %>
+    <p><strong>Proveedores Registrados:</strong> <%= @providers_count %></p>
+    <p><strong>Bancos Registrados:</strong> <%= @banks_count %></p>
+  <% else %>
+    <p>No hay registros disponibles.</p>
+  <% end %>
+</turbo-frame>

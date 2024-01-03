@@ -1,4 +1,6 @@
 es:
+  dashboard:
+      no_records_message: 'No hay registros disponibles.'
   activerecord:
     errors:
       models:
