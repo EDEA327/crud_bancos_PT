@@ -3,8 +3,8 @@
 <p><strong>ID:</strong> <%= @bank.id %></p>
 
 <p>
-  <%= link_to 'Editar', edit_bank_path(@bank) %>
-  <%= link_to 'Eliminar', bank_path(@bank), data: {
+  <%= link_to t('common.edit'), edit_bank_path(@bank) %>
+  <%= link_to t('common.destroy'), bank_path(@bank), data: {
     turbo_method: :delete,
     turbo_confirm: t('common.confirm')
   } %>

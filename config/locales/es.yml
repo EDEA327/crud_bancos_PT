@@ -8,9 +8,7 @@ es:
                 too_long: "es demasiado largo (máximo es 50 caracteres)"
     attributes:
       bank:
-        name: 'Nombre'
-  helpers:
-    submit: 'Enviar'
+        name: 'Nombre'   
   errors:
     form: 'prohibieron que este banco sea guardado:'
     messages:
@@ -23,6 +21,9 @@ es:
     no_information: 'Sin información en la tabla'
     actions: 'Acciones'
     no_providers: 'Sin proveedores registrados'
+    submit: 'Enviar'
+    edit: 'Editar'
+    destroy: 'Eliminar'
   banks:
     edit:
       title: 'Editar banco:'
@@ -31,41 +32,9 @@ es:
     index:
       add_bank: 'Nuevo banco'
       title: 'Listado de bancos'
-      create: 
-        created: 'El banco fue creado exitosamente.'
-      update: 
-        updated: 'El banco se actualizó exitosamente.'
-      destroy:
-        destroyed: 'El banco se eliminó exitosamente.'
+    # Acciones     
     created: 'El banco fue creado exitosamente.'
     destroyed: 'El banco se eliminó exitosamente.'
-  providers:
-    errors:
-      nit: 'formato inválido'
-    create:
-      created: 'El proveedor fue creado exitosamente.'
-      error: 'Error en la creación'
-    update:
-      updated: 'El proveedor se actualizó exitosamente.'
-    destroy:
-      destroyed: 'El proveedor se eliminó exitosamente.'
-    form:
-      nit: 'NIT'
-      name: 'Nombre'
-      contact_name: 'Nombre de contacto'
-      contact_phone: 'Numero del contacto'
-      bank_name: 'Banco'
-      account_number: 'Numero de cuenta'
-      existing_banks: 'Banco'
-    nit_format: '901362343-4'
-    index:
-      title: 'Listado de Proveedores'
-      name: 'Nombre del Proveedor'
-      contact_name: 'Nombre de Contacto'
-      contact_phone: 'Número de Celular'
-      bank_name: 'Nombre del Banco'
-      account_number: 'Número de Cuenta Bancaria'
-      new_provider: 'Nuevo proveedor'
-    new:
-      edit:
-        title: 'Nuevo proveedor'
+    updated: 'El banco se actualizó exitosamente.'
+    destroyed: 'El banco se eliminó exitosamente.'
+  
