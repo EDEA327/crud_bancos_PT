@@ -14,14 +14,24 @@ module ActiveSupport
     fixtures :all
 
     # Add more helper methods to be used by all tests here...
+    # Incluir I18n en las pruebas
+    include I18n
   end
 end
 
 class ActionDispatch::IntegrationTest
   include Rails.application.routes.url_helpers
   include Capybara::DSL
+  include Capybara::Minitest::Assertions
 
+  # Excluir Capybara::DSL para evitar conflictos
+  self.use_transactional_tests = false
   setup do
-    I18n.locale = :es
+    Capybara.current_driver = Capybara.javascript_driver if metadata[:js]
+  end
+
+  teardown do
+    Capybara.reset_sessions!
+    Capybara.use_default_driver
   end
 end

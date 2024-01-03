@@ -9,7 +9,7 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
     assert_template "new"
     assert_instance_of Bank, assigns(:bank)
     assert assigns(:bank).new_record?
-    assert_equal ["is too long (maximum is 50 characters)"], assigns(:bank).errors[:name]
+    assert_equal [I18n.t('activerecord.errors.models.bank.attributes.name.too_long')], assigns(:bank).errors[:name]
   end
 
   test "Deberia mostrar la lista de bancos" do
@@ -30,7 +30,7 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
   test "Debe crear un banco" do
     post banks_url, params: { bank: { name: "New Bank" } }
     assert_redirected_to banks_url
-    assert_equal flash[:notice], "El banco #{banks(:one).name} fue creado exitosamente."
+    assert_equal flash[:notice], I18n.t('banks.created')
   end
 
   test "Debe actualizar el banco" do
@@ -44,7 +44,7 @@ class BanksControllerTest < ActionDispatch::IntegrationTest
     end
 
     assert_redirected_to banks_path
-    assert_equal flash[:notice], "El banco #{banks(:one).name} se eliminó exitosamente."
+    assert_equal flash[:notice], I18n.t('banks.destroyed')
   end
 
   private

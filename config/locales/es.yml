@@ -1,10 +1,11 @@
 es:
   activerecord:
-    models:
-      bank:
-        attributes:
-            name:
-              too_long: "es demasiado largo (máximo es 50 caracteres)"
+    errors:
+      models:
+        bank:
+          attributes:
+              name:
+                too_long: "es demasiado largo (máximo es 50 caracteres)"
     attributes:
       bank:
         name: 'Nombre'
@@ -33,6 +34,8 @@ es:
         updated: 'El banco se actualizó exitosamente.'
       destroy:
         destroyed: 'El banco se eliminó exitosamente.'
+    created: 'El banco fue creado exitosamente.'
+    destroyed: 'El banco se eliminó exitosamente.'
   providers:
     errors:
       nit: 'formato inválido'
