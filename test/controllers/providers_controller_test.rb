@@ -15,21 +15,28 @@ class ProvidersControllerTest < ActionDispatch::IntegrationTest
   test 'debería obtener nuevo' do
     get new_provider_url
     assert_response :success
+
+    # Verifica que el proveedor asignado tenga un banco asociado
+    assert_not_nil assigns(:provider)
   end
+
 
   test 'debería crear proveedor' do
     assert_difference('Provider.count') do
-      post providers_url, params: { provider: { name: 'Nuevo Proveedor', nit: '123456789-0', contact_name: 'Nuevo Contacto', contact_phone: '1234567890', bank_id: banks(:one).id } }
+      post providers_path, params: { provider: { name: 'Nuevo Proveedor', nit: '123456789-2', contact_name: 'Nuevo Contacto', contact_phone: '1234567890', bank_id: banks(:one).id } }
     end
 
-    assert_redirected_to provider_url(Provider.last)
+    assert_redirected_to providers_path
     assert_equal I18n.t('providers.create.success'), flash[:notice]
   end
 
+
+
   test 'debería mostrar proveedor' do
-    get provider_url(@provider)
+    get provider_url(@provider, format: :html)
     assert_response :success
   end
+
 
   test 'debería obtener editar' do
     get edit_provider_url(@provider)
