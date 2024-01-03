@@ -45,4 +45,6 @@ es:
       updated: 'El proveedor se actualizó exitosamente.'
     destroy:
       destroyed: 'El proveedor se eliminó exitosamente.'
-  nit_format: '901362343-4'
+    form:
+      nit: 'NIT'
+    nit_format: '901362343-4'
