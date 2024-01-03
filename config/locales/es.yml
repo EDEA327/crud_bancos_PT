@@ -20,6 +20,10 @@ es:
   common:
     index_btn: 'Volver al listado'
     confirm: '¿Está seguro?'
+    no_information: 'Sin información en la tabla'
+    actions: 'Acciones'
+    confirm: '¿Estás seguro?'
+    no_providers: 'Sin proveedores registrados'
   banks:
     edit:
       title: 'Editar banco:'
@@ -48,3 +52,11 @@ es:
     form:
       nit: 'NIT'
     nit_format: '901362343-4'
+    index:
+      title: 'Listado de Proveedores'
+      name: 'Nombre del Proveedor'
+      contact_name: 'Nombre de Contacto'
+      contact_phone: 'Número de Celular'
+      bank_name: 'Nombre del Banco'
+      account_number: 'Número de Cuenta Bancaria'
+      new_provider: 'Nuevo proveedor'
