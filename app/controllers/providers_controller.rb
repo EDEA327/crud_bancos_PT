@@ -18,9 +18,10 @@ class ProvidersController < ApplicationController
     @provider = Provider.new(provider_params)
 
     if @provider.save
-      redirect_to @provider, notice: t('providers.create.created')
+      redirect_to providers_path, notice: t('providers.create.created')
     else
       @banks = Bank.all
+      flash.now[:alert] = t('providers.create.error')
       render :new
     end
   end
@@ -39,7 +40,7 @@ class ProvidersController < ApplicationController
 
   def destroy
     @provider.destroy
-    redirect_to providers_url, notice: t('providers.destroy.destroyed', name: @provider.name)
+    redirect_to providers_url, notice: t('providers.destroy.destroyed')
   end
 
   private
