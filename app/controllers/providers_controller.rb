@@ -11,11 +11,13 @@ class ProvidersController < ApplicationController
 
   def new
     @provider = Provider.new
+    @provider.build_bank_account #Crea la cuenta de banco
     @banks = Bank.all # Para el combobox de bancos en el formulario
   end
 
   def create
     @provider = Provider.new(provider_params)
+    @banks = Bank.all
 
     if @provider.save
       redirect_to providers_path, notice: t('providers.create.created')
