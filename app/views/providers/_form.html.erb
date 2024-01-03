@@ -1,4 +1,4 @@
-<%= form_with(model: provider, url: providers_path, method: :post) do |form| %>
+<%= form_with(model: @provider, url: providers_path, method: :post) do |form| %>
   <!-- Campos del proveedor -->
   <label for="name"><%= t('providers.form.name') %>:</label>
   <%= form.text_field :name, required: true %>
