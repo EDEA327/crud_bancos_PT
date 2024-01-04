@@ -1,4 +1,5 @@
 class BanksController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   def index
     @banks = Bank.all
   end
@@ -13,6 +14,7 @@ class BanksController < ApplicationController
 
   def create
     @bank = Bank.new(bank_params)
+    @bank.user = current_user
 
     if @bank.save
       redirect_to banks_url, notice: t('banks.created')
