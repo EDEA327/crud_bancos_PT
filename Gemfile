@@ -55,8 +55,7 @@ gem 'devise'
 
 # Bootstrap for styling and UI components
 gem 'bootstrap', '~> 5.3.2'
-# Sassc-rails for CSS processing
-gem 'sassc-rails'
+gem 'dartsass-sprockets'
 #JQuery
 gem 'jquery-rails'
 
