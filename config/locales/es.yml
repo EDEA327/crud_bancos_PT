@@ -1,5 +1,17 @@
 es:
+  navbar:
+    home: 'Inicio'
+    dashboard: 'Tablero'
+    banks: 'Bancos'
+    providers: 'Proveedores'
   devise:
+    registrations:
+      new:
+        sign_up: "Registrarse"
+        email: "Correo electrónico"
+        password: "Contraseña"
+        password_confirmation: "Confirmar contraseña"
+        minimum_password_length: "(mínimo %{length} caracteres)"
     sessions:
       new:
         sign_in: "Iniciar sesión"
