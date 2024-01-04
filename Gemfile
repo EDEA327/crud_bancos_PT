@@ -57,6 +57,8 @@ gem 'devise'
 gem 'bootstrap', '~> 5.3.2'
 # Sassc-rails for CSS processing
 gem 'sassc-rails'
+#JQuery
+gem 'jquery-rails'
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

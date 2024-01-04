@@ -1,18 +1,30 @@
-<nav class="navbar">
-  <div class="navbar-left">
-    <%= link_to t('navbar.home'), root_path %>
-  </div>
-  
-  <div class="navbar-right">
-    <% if user_signed_in? %>
-      <%= link_to t('navbar.dashboard'), dashboard_path %>
-      <%= link_to t('navbar.banks'), banks_path %>
-      <%= link_to t('navbar.providers'), providers_path %>
-      
-      <%= button_to t('home.sign_out'), destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to t('home.sign_in'), new_user_session_path %>
-      <%= link_to t('home.sign_up'), new_user_registration_path %>
-    <% end %>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    
+    <!-- Brand (logo o nombre de la aplicación) -->
+    <%= link_to t('navbar.home'), root_path, class: "navbar-brand" %>
+
+    <!-- Barra de navegación colapsable para pantallas pequeñas -->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <div class="navbar-nav ml-auto">
+
+        <% if user_signed_in? %>
+          <!-- Enlaces para usuarios autenticados -->
+          <%= link_to t('navbar.dashboard'), dashboard_path, class: "nav-item nav-link" %>
+          <%= link_to t('navbar.banks'), banks_path, class: "nav-item nav-link" %>
+          <%= link_to t('navbar.providers'), providers_path, class: "nav-item nav-link" %>
+          <%= button_to t('home.sign_out'), destroy_user_session_path, method: :delete, class: "btn btn-outline-danger ml-2" %>
+        <% else %>
+          <!-- Enlaces para usuarios no autenticados -->
+          <%= link_to t('home.sign_in'), new_user_session_path, class: "nav-item nav-link" %>
+          <%= link_to t('home.sign_up'), new_user_registration_path, class: "nav-item nav-link" %>
+        <% end %>
+        
+      </div>
+    </div>
   </div>
 </nav>
