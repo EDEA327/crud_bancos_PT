@@ -14,7 +14,7 @@ Asegúrate de tener instalados los siguientes requisitos:
 1. **Clonar el Repositorio:**
 
     ```bash
-    git clone https://github.com/tu_usuario/tu_proyecto.git
+    git clone https://github.com/EDEA327/crud_bancos_PT.git
     ```
 
 2. **Instalar Dependencias:**
