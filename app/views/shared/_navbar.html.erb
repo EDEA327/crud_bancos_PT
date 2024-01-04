@@ -1,0 +1,18 @@
+<nav class="navbar">
+  <div class="navbar-left">
+    <%= link_to t('navbar.home'), root_path %>
+  </div>
+  
+  <div class="navbar-right">
+    <% if user_signed_in? %>
+      <%= link_to t('navbar.dashboard'), dashboard_path %>
+      <%= link_to t('navbar.banks'), banks_path %>
+      <%= link_to t('navbar.providers'), providers_path %>
+      
+      <%= button_to t('home.sign_out'), destroy_user_session_path, method: :delete %>
+    <% else %>
+      <%= link_to t('home.sign_in'), new_user_session_path %>
+      <%= link_to t('home.sign_up'), new_user_registration_path %>
+    <% end %>
+  </div>
+</nav>
