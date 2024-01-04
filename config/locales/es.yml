@@ -18,6 +18,7 @@ es:
         log_in: "Ingresar"
       remember_me: 'Recuerdame'
       password: 'Contraseña'
+      signed_in: 'Logueado'
     shared:
       links:
         log_in: "Iniciar sesión"

@@ -8,11 +8,7 @@
     <% end %>
 
     <ul class="list-group mt-3">
-      <% @providers.each do |provider| %>
-        <li class="list-group-item">
-          <%= link_to provider.name, provider_path(provider) %>
-        </li>
-      <% end %>
+      <%= render partial: "provider", collection: @providers %>
     </ul>
 
     <%= will_paginate @providers, renderer: BootstrapPagination::Rails %>
