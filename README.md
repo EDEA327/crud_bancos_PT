@@ -20,7 +20,7 @@ Asegúrate de tener instalados los siguientes requisitos:
 2. **Instalar Dependencias:**
 
     ```bash
-    cd tu_proyecto
+    cd crud_bancos_PT
     bundle install
     ```
 
