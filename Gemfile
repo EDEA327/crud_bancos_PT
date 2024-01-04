@@ -46,6 +46,8 @@ gem 'rails-controller-testing'
 
 # Me permite paginar
 gem 'will_paginate'
+gem 'will_paginate-bootstrap'
+
 
 # Gemfile
 gem 'hotwire-rails'
@@ -58,6 +60,7 @@ gem 'bootstrap', '~> 5.3.2'
 gem 'dartsass-sprockets'
 #JQuery
 gem 'jquery-rails'
+
 
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]

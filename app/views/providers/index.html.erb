@@ -15,7 +15,7 @@
       <% end %>
     </ul>
 
-    <%= will_paginate @providers, renderer: WillPaginate::ActionView::BootstrapLinkRenderer %>
+    <%= will_paginate @providers, renderer: BootstrapPagination::Rails %>
 
   <% else %>
     <!-- Lógica para cuando no hay proveedores -->
