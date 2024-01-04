@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
+  devise_for :users, controllers: {
+    sessions: 'users/sessions'
+  }
   root 'home#index'
-  devise_for :users
-  devise_scope :user do
-    get '/users/sign_out' => 'devise/sessions#destroy', :as => :destroy_user_session
-  end
   get '/dashboard', to: 'dashboard#show', as: 'dashboard'
   resources :banks
   resources :providers
