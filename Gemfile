@@ -53,6 +53,11 @@ gem 'hotwire-rails'
 # Sistema de login
 gem 'devise'
 
+# Bootstrap for styling and UI components
+gem 'bootstrap', '~> 5.5.0'
+# Sassc-rails for CSS processing
+gem 'sassc-rails'
+
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
