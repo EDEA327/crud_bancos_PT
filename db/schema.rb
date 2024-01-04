@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_01_04_004612) do
+ActiveRecord::Schema[7.1].define(version: 2024_01_04_010348) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -31,7 +31,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_04_004612) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "account_number"
+    t.bigint "user_id", null: false
     t.index ["bank_id"], name: "index_providers_on_bank_id"
+    t.index ["user_id"], name: "index_providers_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -48,4 +50,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_04_004612) do
 
   add_foreign_key "banks", "users"
   add_foreign_key "providers", "banks"
+  add_foreign_key "providers", "users"
 end
