@@ -1,9 +1,15 @@
 class ApplicationController < ActionController::Base
   around_action :switch_locale
+  before_action :authenticate_user!
+
+  protected
 
   def switch_locale(&action)
-    pp locale_from_header
     I18n.with_locale(locale_from_header, &action)
+  end
+
+  def after_sign_in_path_for(resource)
+    dashboard_path
   end
 
   private
@@ -14,5 +20,4 @@ class ApplicationController < ActionController::Base
 
     accept_language.scan(/^[a-z]{2}/).first
   end
-
 end
