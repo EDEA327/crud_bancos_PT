@@ -1,7 +1,7 @@
-# app/views/providers/edit.html.erb
+<div class="container mt-4">
+  <h1><%= t('providers.edit.title') %></h1>
 
-<h1><%= t('providers.edit.title') %></h1>
+  <%= render 'form', provider: @provider %>
 
-<%= render 'form', provider: @provider %>
-
-<%= link_to t('common.index_btn'), providers_path %>
+  <%= link_to t('common.index_btn'), providers_path, class: 'btn btn-secondary mt-3' %>
+</div>

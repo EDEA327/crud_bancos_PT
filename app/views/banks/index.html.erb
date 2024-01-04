@@ -1,18 +1,25 @@
-<% if @banks.any? %>
-  <!-- Lógica para cuando hay bancos -->
-  <% if notice %>
-  <div class="notice"><%= notice %></div>
-  <% end %>
-  <h1><%=t('.title')%></h1>
-  <ul>
-    <% @banks.each do |bank| %>
-      <li><%= link_to bank.name, bank %></li>
+<div class="container mt-4">
+  <% if @banks.any? %>
+    <!-- Lógica para cuando hay bancos -->
+    <% if notice %>
+      <div class="alert alert-success" role="alert">
+        <%= notice %>
+      </div>
     <% end %>
-  </ul>
-<% else %>
-  <!-- Lógica para cuando no hay bancos -->
-  <p>No hay bancos en la base de datos.</p>
-<% end %>
+    <h1><%= t('.title') %></h1>
+    <ul class="list-group">
+      <% @banks.each do |bank| %>
+        <li class="list-group-item"><%= link_to bank.name, bank %></li>
+      <% end %>
+    </ul>
+  <% else %>
+    <!-- Lógica para cuando no hay bancos -->
+    <div class="alert alert-info" role="alert">
+      <p><%= t('.no_banks') %></p>
+    </div>
+  <% end %>
 
-<%= link_to t('.add_bank'), new_bank_path %>
+  <%= link_to t('.add_bank'), new_bank_path, class: 'btn btn-primary mt-3' %>
+</div>
+
 

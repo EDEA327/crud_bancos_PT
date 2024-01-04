@@ -1,13 +1,15 @@
-<h1><%= @bank.name %></h1>
+<div class="container mt-4">
+  <h1><%= @bank.name %></h1>
 
-<p><strong>ID:</strong> <%= @bank.id %></p>
+  <p><strong>ID:</strong> <%= @bank.id %></p>
 
-<p>
-  <%= link_to t('common.edit'), edit_bank_path(@bank) %>
-  <%= link_to t('common.destroy'), bank_path(@bank), data: {
-    turbo_method: :delete,
-    turbo_confirm: t('common.confirm')
-  } %>
-</p>
+  <p>
+    <%= link_to t('common.edit'), edit_bank_path(@bank), class: 'btn btn-primary' %>
+    <%= link_to t('common.destroy'), bank_path(@bank), method: :delete, data: {
+      turbo_method: :delete,
+      turbo_confirm: t('common.confirm')
+    }, class: 'btn btn-danger', remote: true %>
+  </p>
 
-<%= link_to t('common.index_btn'), banks_path %>
+  <%= link_to t('common.index_btn'), banks_path, class: 'btn btn-secondary' %>
+</div>

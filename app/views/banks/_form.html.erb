@@ -1,14 +1,15 @@
-<%= form_with(model: @bank, local: true) do |form| %>
-  <div class="field">
-    <%= form.label :name, t('activerecord.attributes.bank.name') %>
-    <%= form.text_field :name %>
+<%= form_with(model: @bank, local: true, class: 'mt-4') do |form| %>
+  <div class="mb-3">
+    <%= form.label :name, class: 'form-label' %>
+    <%= form.text_field :name, class: 'form-control' %>
     <% @bank.errors.full_messages_for(:name).each do |message| %>
-      <div><%= message %></div>
+      <div class="invalid-feedback d-block"><%= message %></div>
     <% end %>
   </div>
 
-  <div class="actions">
-    <%= form.submit t('common.submit') %>
+  <div class="mb-3">
+    <%= form.submit t('common.submit'), class: 'btn btn-primary' %>
   </div>
 <% end %>
+
 

@@ -1,47 +1,49 @@
-<%= form_with(model: provider, local: true) do |form| %>
-  <% if provider.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(provider.errors.count, I18n.t('errors.count.one')) %> <%= I18n.t('errors.form') %>:</h2>
+<div class="container mt-4">
+  <%= form_with(model: provider, local: true) do |form| %>
+    <% if provider.errors.any? %>
+      <div id="error_explanation" class="alert alert-danger">
+        <h2><%= pluralize(provider.errors.count, I18n.t('errors.count.one')) %> <%= I18n.t('errors.form') %>:</h2>
 
-      <ul>
-        <% provider.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+        <ul>
+          <% provider.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="mb-3">
+      <%= form.label :name, class: 'form-label' %>
+      <%= form.text_field :name, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :nit, class: 'form-label' %>
+      <%= form.text_field :nit, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :contact_name, class: 'form-label' %>
+      <%= form.text_field :contact_name, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :contact_phone, class: 'form-label' %>
+      <%= form.text_field :contact_phone, class: 'form-control' %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :bank_id, class: 'form-label' %>
+      <%= form.collection_select(:bank_id, Bank.all, :id, :name, { prompt: I18n.t('common.select_bank') }, { class: 'form-select' }) %>
+    </div>
+
+    <div class="mb-3">
+      <%= form.label :account_number, class: 'form-label' %>
+      <%= form.text_field :account_number, class: 'form-control' %>
+    </div>
+
+    <div class="d-grid">
+      <%= form.submit I18n.t('common.submit'), class: 'btn btn-primary' %>
     </div>
   <% end %>
-
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :nit %>
-    <%= form.text_field :nit %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contact_name %>
-    <%= form.text_field :contact_name %>
-  </div>
-
-  <div class="field">
-    <%= form.label :contact_phone %>
-    <%= form.text_field :contact_phone %>
-  </div>
-
-  <div class="field">
-    <%= form.label :bank_id %>
-    <%= form.collection_select(:bank_id, Bank.all, :id, :name, { prompt: I18n.t('common.select_bank') }) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :account_number %>
-    <%= form.text_field :account_number %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit I18n.t('common.submit') %>
-  </div>
-<% end %>
+</div>

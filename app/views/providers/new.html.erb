@@ -1,5 +1,8 @@
-<h1><%= t('providers.new.title') %></h1>
+<div class="container mt-4">
+  <h1><%= t('providers.new.title') %></h1>
 
-<%= render 'form', provider: @provider %>
+  <%= render 'form', provider: @provider %>
 
-<%= link_to t('common.index_btn'), providers_path %>
+  <%= link_to t('common.index_btn'), providers_path, class: 'btn btn-secondary mt-3' %>
+</div>
+

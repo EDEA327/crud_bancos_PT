@@ -33,7 +33,10 @@ es:
     sign_in: "Iniciar sesión"
     sign_up: "Registrarse"
   dashboard:
-      no_records_message: 'No hay registros disponibles.'
+      title: "Tablero"
+      providers_registered: "Proveedores Registrados"
+      banks_registered: "Bancos Registrados"
+      no_records: "Tienes 0 registros disponibles."
   activerecord:
     errors:
       models:

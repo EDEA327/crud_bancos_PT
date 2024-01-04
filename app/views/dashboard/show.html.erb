@@ -1,9 +1,13 @@
-<h1>Dashboard</h1>
-<turbo-frame id="dashboard">
+<h1 class="mt-4"><%= I18n.t('dashboard.title') %></h1>
+<turbo-frame id="dashboard" class="mt-3">
   <% if @providers_count.positive? || @banks_count.positive? %>
-    <p><strong>Proveedores Registrados:</strong> <%= @providers_count %></p>
-    <p><strong>Bancos Registrados:</strong> <%= @banks_count %></p>
+    <div class="mb-3">
+      <strong><%= I18n.t('dashboard.providers_registered') %>:</strong> <%= @providers_count %>
+    </div>
+    <div class="mb-3">
+      <strong><%= I18n.t('dashboard.banks_registered') %>:</strong> <%= @banks_count %>
+    </div>
   <% else %>
-    <p>No hay registros disponibles.</p>
+    <p><%= I18n.t('dashboard.no_records') %></p>
   <% end %>
 </turbo-frame>
