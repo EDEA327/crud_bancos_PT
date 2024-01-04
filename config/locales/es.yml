@@ -1,4 +1,9 @@
 es:
+  devise:
+    sessions:
+      new:
+        sign_in: "Iniciar sesión"
+        log_in: "Ingresar"
   home:
     welcome: "Bienvenido a la Página de Inicio"
     greeting: "¡Hola, %{email}!"
