@@ -1,17 +1,102 @@
 en:
+  navbar:
+    home: 'Home'
+    dashboard: 'Dashboard'
+    banks: 'Banks'
+    providers: 'Providers'
+  devise:
+    registrations:
+      new:
+        sign_up: "Sign Up"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Confirm Password"
+        minimum_password_length: "(minimum %{length} characters)"
+    sessions:
+      new:
+        sign_in: "Sign In"
+        log_in: "Log In"
+      remember_me: 'Remember Me'
+      password: 'Password'
+    shared:
+      links:
+        log_in: "Log In"
+        sign_up: "Sign Up"
+        forgot_password: "Forgot Your Password?"
+        no_confirmation_instructions: "Haven't received confirmation instructions?"
+        no_unlock_instructions: "Haven't received unlock instructions?"
+        sign_in_with: "Sign In with %{provider}"
+  home:
+    welcome: "Welcome to the Home Page"
+    greeting: "Hello, %{email}!"
+    sign_out: "Sign Out"
+    sign_in: "Sign In"
+    sign_up: "Sign Up"
+  dashboard:
+    title: "Dashboard"
+    providers_registered: "Providers Registered"
+    banks_registered: "Banks Registered"
+    no_records: "You have 0 records available."
   activerecord:
-    models:
-      bank: 'Bank'
+    errors:
+      models:
+        bank:
+          attributes:
+            name:
+              too_long: "is too long (maximum is 50 characters)"
+        provider:
+          attributes:
+            name:
+              too_long: "is too long (maximum %{count} characters)"
+            nit:
+              invalid: "is not valid"
+              taken: "has already been taken"
+            contact_name:
+              too_long: "is too long (maximum %{count} characters)"
+            contact_phone:
+              too_long: "is too long (maximum %{count} characters)"
     attributes:
       bank:
         name: 'Name'
-  helpers:
-    submit: 'Submit'
-  error:
+      provider:
+        name: "Name"
+        nit: "NIT"
+        contact_name: "Contact Name"
+        contact_phone: "Contact Phone"
+  errors:
     form: 'prohibited this bank from being saved:'
+    messages:
+      count:
+        one: "must be %{count} or less"
+        other: "must be %{count} or less"
   common:
-    index_btn: 'Back to the list'
+    index_btn: 'Back to List'
     confirm: 'Are you sure?'
+    no_information: 'No information in the table'
+    actions: 'Actions'
+    no_providers: 'No registered providers'
+    submit: 'Submit'
+    edit: 'Edit'
+    destroy: 'Delete'
+    select_bank: 'Select Bank'
+  providers:
+    create:
+      success: 'Provider created successfully.'
+    update:
+      success: 'Provider updated successfully.'
+    destroy:
+      success: 'Provider deleted successfully.'
+    index:
+      title: 'List of Providers'
+      no_providers: 'There are no providers in the database.'
+      add_provider: 'New Provider'
+    new:
+      title: 'New provider'
+    name: 'Name'
+    contact_name: 'Contact Name'
+    contact_phone: 'Contact Phone'
+    bank_name: 'Bank Name'
+    bank_account_number: 'Bank Account Number'
   banks:
     edit:
       title: 'Edit bank:'
@@ -20,9 +105,6 @@ en:
     index:
       add_bank: 'New bank'
       title: 'List of banks'
-      create:
-        created: 'The bank was created successfully.'
-      update:
-        updated: 'The bank was updated successfully.'
-      destroy:
-        destroyed: 'The bank was deleted successfully.'
+    created: 'The bank was created successfully.'
+    destroyed: 'The bank was deleted successfully.'
+    updated: 'The bank was updated successfully.'
