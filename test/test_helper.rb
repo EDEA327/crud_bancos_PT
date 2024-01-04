@@ -35,3 +35,7 @@ class ActionDispatch::IntegrationTest
     Capybara.use_default_driver
   end
 end
+
+class ActiveSupport::TestCase
+  include Devise::Test::IntegrationHelpers
+end
