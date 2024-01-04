@@ -4,6 +4,8 @@ require 'test_helper'
 
 class ProvidersControllerTest < ActionDispatch::IntegrationTest
   setup do
+    @user = users(:one)
+    sign_in(@user)
     @provider = providers(:one)
   end
 
