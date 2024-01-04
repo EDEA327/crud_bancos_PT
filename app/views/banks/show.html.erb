@@ -5,10 +5,10 @@
 
   <p>
     <%= link_to t('common.edit'), edit_bank_path(@bank), class: 'btn btn-primary' %>
-    <%= link_to t('common.destroy'), bank_path(@bank), method: :delete, data: {
+    <%= link_to t('common.destroy'), bank_path(@bank), data: {
       turbo_method: :delete,
       turbo_confirm: t('common.confirm')
-    }, class: 'btn btn-danger', remote: true %>
+    }, class: 'btn btn-danger' %>
   </p>
 
   <%= link_to t('common.index_btn'), banks_path, class: 'btn btn-secondary' %>

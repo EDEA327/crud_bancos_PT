@@ -103,6 +103,7 @@ es:
     new:
       title: 'Nuevo banco'
     index:
+      no_banks: 'No hay bancos registrados'
       add_bank: 'Nuevo banco'
       title: 'Listado de bancos'
     created: 'El banco fue creado exitosamente.'

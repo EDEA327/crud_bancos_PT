@@ -8,9 +8,7 @@
     <% end %>
     <h1><%= t('.title') %></h1>
     <ul class="list-group">
-      <% @banks.each do |bank| %>
-        <li class="list-group-item"><%= link_to bank.name, bank %></li>
-      <% end %>
+      <%= render partial: "bank", collection: @banks %>
     </ul>
   <% else %>
     <!-- Lógica para cuando no hay bancos -->
@@ -20,6 +18,7 @@
   <% end %>
 
   <%= link_to t('.add_bank'), new_bank_path, class: 'btn btn-primary mt-3' %>
+  
 </div>
 
 
