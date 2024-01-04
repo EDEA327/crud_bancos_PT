@@ -8,9 +8,9 @@ class ApplicationController < ActionController::Base
     I18n.with_locale(locale_from_header, &action)
   end
 
-  def after_sign_in_path_for(resource)
-    dashboard_path
-  end
+  # def after_sign_in_path_for(resource)
+  #   dashboard_path
+  # end
 
   private
 
