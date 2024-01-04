@@ -4,6 +4,16 @@ es:
       new:
         sign_in: "Iniciar sesión"
         log_in: "Ingresar"
+      remember_me: 'Recuerdame'
+      password: 'Contraseña'
+    shared:
+      links:
+        log_in: "Iniciar sesión"
+        sign_up: "Registrarse"
+        forgot_password: "¿Olvidaste tu contraseña?"
+        no_confirmation_instructions: "¿No recibiste las instrucciones de confirmación?"
+        no_unlock_instructions: "¿No recibiste las instrucciones de desbloqueo?"
+        sign_in_with: "Iniciar sesión con %{provider}"
   home:
     welcome: "Bienvenido a la Página de Inicio"
     greeting: "¡Hola, %{email}!"
