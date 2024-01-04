@@ -1,11 +1,12 @@
 class BanksController < ApplicationController
   before_action :authenticate_user!
+  before_action :set_bank, only: [:show, :edit, :update, :destroy]
+
   def index
     @banks = Bank.all
   end
 
   def show
-    @bank = Bank.find(params[:id])
   end
 
   def new
@@ -24,16 +25,11 @@ class BanksController < ApplicationController
   end
 
   def edit
-    @bank = Bank.find(params[:id])
   end
 
   def update
-    @bank = Bank.find(params[:id])
-
     if @bank.update(bank_params)
-      # Actualiza la marca de tiempo de los proveedores asociados cuando se actualiza el banco
-      @bank.providers.update_all(updated_at: Time.current)
-
+      update_providers_timestamp
       redirect_to banks_path, notice: t('banks.updated')
     else
       render :edit
@@ -41,11 +37,7 @@ class BanksController < ApplicationController
   end
 
   def destroy
-    @bank = Bank.find(params[:id])
-
-    # Actualiza la marca de tiempo de los proveedores asociados antes de eliminar el banco
-    @bank.providers.update_all(updated_at: Time.current)
-
+    update_providers_timestamp
     @bank.destroy
 
     redirect_to banks_url, notice: t('banks.destroyed'), status: :see_other
@@ -53,7 +45,15 @@ class BanksController < ApplicationController
 
   private
 
+  def set_bank
+    @bank = Bank.find(params[:id])
+  end
+
   def bank_params
     params.require(:bank).permit(:name)
+  end
+
+  def update_providers_timestamp
+    @bank.providers.update_all(updated_at: Time.current)
   end
 end
