@@ -1,3 +1,4 @@
+<% unless controller_name.in?(['registrations', 'sessions']) %>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     
@@ -10,18 +11,13 @@
 
     <div class="collapse navbar-collapse" id="navbarNav">
       <div class="navbar-nav ml-auto">
-        <% if user_signed_in? %>
-          <!-- Enlaces para usuarios autenticados -->
           <%= link_to t('navbar.dashboard'), dashboard_path, class: "nav-item nav-link" %>
           <%= link_to t('navbar.banks'), banks_path, class: "nav-item nav-link" %>
           <%= link_to t('navbar.providers'), providers_path, class: "nav-item nav-link" %>
           <%= button_to t('home.sign_out'), destroy_user_session_path, method: :delete, class: "btn btn-outline-danger ml-2" %>
-        <% else %>
-          <!-- Enlaces para usuarios no autenticados -->
-          <%= link_to t('home.sign_in'), new_user_session_path, class: "nav-item nav-link" %>
-          <%= link_to t('home.sign_up'), new_user_registration_path, class: "nav-item nav-link" %>
-        <% end %>
       </div>
     </div>
   </div>
 </nav>
+<% end %>
+
