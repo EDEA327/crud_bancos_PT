@@ -8,7 +8,6 @@ Asegúrate de tener instalados los siguientes requisitos:
 
 - [Ruby](https://www.ruby-lang.org/es/documentation/installation/)
 - [Rails](https://rubyonrails.org/)
-- Otras dependencias específicas del proyecto...
 
 ## Configuración del Proyecto
 
@@ -32,7 +31,6 @@ Asegúrate de tener instalados los siguientes requisitos:
     rails db:migrate
     ```
 
-    También puedes añadir comandos adicionales de configuración aquí...
 
 ## Puesta en Marcha
 
@@ -46,30 +44,38 @@ Asegúrate de tener instalados los siguientes requisitos:
 
 ## Características Principales
 
-Enumera las características clave del proyecto.
+Este proyecto presenta las siguientes características clave:
 
-## Estructura del Proyecto
+1. **CRUD de Bancos:**
+   - Crear, Leer, Actualizar y Eliminar (CRUD) bancos.
+   - Detalles incluyen el nombre del banco.
 
-Describe la estructura de directorios y archivos más importante del proyecto.
+2. **CRUD de Proveedores:**
+   - CRUD de proveedores con información como nombre, NIT, contacto, teléfono y cuenta bancaria.
+
+3. **Sistema de Inicio de Sesión:**
+   - Funcionalidad de inicio de sesión para usuarios.
+   - Acceso seguro a las funcionalidades del CRUD.
+
+4. **Interfaz de Usuario Intuitiva:**
+   - Diseño fácil de usar y navegación fluida.
+   - Interfaz clara para la gestión de bancos y proveedores.
+
+5. **Gestión de Sesiones:**
+   - Sesiones de usuario gestionadas de forma segura.
+
+6. **Localización:**
+   - Internacionalización (I18n) implementada para ofrecer soporte en varios idiomas.
+
+7. **Paginación:**
+   - Paginación implementada para una experiencia de usuario mejorada.
+
 
 ## Tecnologías Utilizadas
 
 - Ruby on Rails
-- Otras tecnologías...
+- Bootstrap
 
-## Contribuciones
-
-Si deseas contribuir al proyecto, sigue estos pasos:
-
-1. Haz un fork del proyecto.
-2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
-3. Realiza los cambios y haz commit (`git commit -m 'Añade nueva característica'`).
-4. Haz push a la rama (`git push origin feature/nueva-caracteristica`).
-5. Abre un Pull Request.
-
-## Problemas Conocidos
-
-Lista cualquier problema o desafío conocido que los usuarios o colaboradores puedan enfrentar.
 
 ## Licencia
 
